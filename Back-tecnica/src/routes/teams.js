@@ -7,7 +7,7 @@ const {
   eliminarEquipo,
   registrarMantenimiento,
   obtenerHistorial,
-} = require('./controllers/teamsController');
+} = require('../controllers/teamsController');
 
 // Rutas de equipos
 router.get('/equipos', listarEquipos);

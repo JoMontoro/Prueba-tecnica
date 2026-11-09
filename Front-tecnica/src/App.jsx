@@ -7,7 +7,7 @@ import {
   registrarMantenimiento,
   obtenerHistorial,
   checkHealth,
-} from '../services/api';
+} from './services/api';
 
 const TIPOS = [
   { value: 'camion', label: 'Camión', intervalo: 500 },
@@ -193,7 +193,7 @@ export default function App() {
             <span>Backend: {health.status === 'ok' ? 'Online ✅' : 'Fuera de servicio ❌'}</span>
           </div>
         )}
-      </div>
+      </header>
 
       {alert && (
         <div className={`alert alert-${alert.tipo}`}>{alert.mensaje}</div>
@@ -202,7 +202,7 @@ export default function App() {
       <div className="grid">
         {/* Panel: lista de equipos */}
         <div className="card">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16px }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
             <h2>Equipos ({equipos.length})</h2>
             <button className="btn btn-primary" onClick={handleCrear}>
               + Nuevo equipo
@@ -341,7 +341,7 @@ export default function App() {
                   placeholder="Ej: Cambio de aceite y filtros"
                 />
               </div>
-              <div className="form-actions" style={{ marginTop: 8px }}>
+              <div className="form-actions" style={{ marginTop: "8px" }}>
                 <button type="submit" className="btn btn-success">
                   Confirmar mantenimiento
                 </button>

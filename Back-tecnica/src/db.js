@@ -4,13 +4,24 @@ const path = require('path');
 
 require('dotenv').config();
 
-const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT || 5432,
-  user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
-  database: process.env.DB_NAME || 'equipos_mineros',
-});
+const isSupabase = process.env.DB_HOST && process.env.DB_HOST.includes('supabase.co');
+
+const pool = new Pool(
+  isSupabase
+    ? {
+        connectionString: `postgresql://${process.env.DB_USER}:${encodeURIComponent(process.env.DB_PASSWORD || '')}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      }
+    : {
+        host: process.env.DB_HOST || 'localhost',
+        port: process.env.DB_PORT || 5432,
+        user: process.env.DB_USER || 'postgres',
+        password: process.env.DB_PASSWORD || 'postgres',
+        database: process.env.DB_NAME || 'equipos_mineros',
+      }
+);
 
 // Intervalos de mantenimiento por tipo de equipo (en horas)
 const INTERVALOS_MANTENIMIENTO = {

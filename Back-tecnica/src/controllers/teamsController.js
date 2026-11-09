@@ -1,4 +1,4 @@
-const { pool, intervaloParaTipo } = require('./db');
+const { pool, intervaloParaTipo } = require('../db');
 
 /**
  * Calcula si un equipo requiere mantenimiento.
