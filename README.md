@@ -210,7 +210,12 @@ Base: `GET /health` — estado del servicio.
 
 ## Uso de IA
 
-Se utilizó IA como apoyo para generar código base, estructura del proyecto y redacción de documentación. Todas las herramientas se indican aquí y el autor del proyecto puede explicar cada pieza entregada.
+Se utilizaron las siguientes herramientas de IA como apoyo durante el desarrollo:
+
+- **ChatGPT / Copilot:** Generación de esqueleto del servidor Express, controladores, migraciones SQL y redacción de documentación.
+- **IA para depuración:** Ayuda para resolver errores de conexión con Supabase, configuración de CORS y ajustes del script `deploy.sh`.
+
+El autor del proyecto ha revisado, comprendido y puede explicar cada pieza de código entregada. El uso de IA fue complementario; la lógica de negocio (intervalos de mantenimiento, reinicio de ciclo, historial) fue implementada y validada manualmente.
 
 ## Criterios de evaluación del reto (según el enunciado)
 
@@ -228,7 +233,13 @@ Se utilizó IA como apoyo para generar código base, estructura del proyecto y r
 - Video de máximo 3 minutos: cambio visible → subir a GitHub → ejecutar `./deploy.sh` → mostrar el cambio publicado.
 - Archivo de entrega en la plataforma HeadHunting4Miners (.mp4 o .mov, máximo 500 MB).
 
+## URLs públicas (producción)
+
+- **Frontend (Vercel):** https://prueba-tecnica-beta-ochre.vercel.app
+- **Backend (Render):** https://prueba-tecnica-lxrb.onrender.com
+- **Health check:** https://prueba-tecnica-lxrb.onrender.com/health
+
 ---
 
 **Autor:** José  
-**Fecha:** 7 de noviembre de 2026
+**Fecha:** 10 de noviembre de 2026
